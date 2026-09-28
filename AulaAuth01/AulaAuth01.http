@@ -1,0 +1,27 @@
+@host = http://localhost:5253
+
+## publico
+GET {{host}}/api/produtos/publico
+
+### Login
+POST {{host}}/Auth/login
+Content-Type: application/json
+
+{"login":"Asaaf Asp.Net","password":"124"}
+
+### Logado
+GET {{host}}/Produtos/logado
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXNhYWYgQXNwLk5ldCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFsdW5vIiwiZXhwIjoxNzkwNjM3MzQ1LCJpc3MiOiJBdWxhQXV0aDAxIiwiYXVkIjoiQXVsYUF1dGgwMSJ9.pQmm6xN5wHBzKXLL4pwOhPIgCqbCmN_vFfpcS7KedqA
+
+### Admin
+GET {{host}}/Produtos/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXNhYWYgQXNwLk5ldCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFsdW5vIiwiZXhwIjoxNzkwNjM3MzQ1LCJpc3MiOiJBdWxhQXV0aDAxIiwiYXVkIjoiQXVsYUF1dGgwMSJ9.pQmm6xN5wHBzKXLL4pwOhPIgCqbCmN_vFfpcS7KedqA
+
+
+
+
+
+
+
+
+
