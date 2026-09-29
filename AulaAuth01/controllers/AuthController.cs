@@ -14,8 +14,9 @@ public class AuthController(IConfiguration config) : ControllerBase
 {
     private static readonly List<Usuario> _usuarios =
     [
-        new("Celia Csharp", "123", "Admin"),
-        new("Asaaf Asp.Net", "124", "Aluno")
+        new("Celia Csharp", "123", "Admin", "TI"),
+        new("Asaaf Asp.Net", "124", "Aluno", "Vendas"),
+        new("Amy Winehouse", "124", "Aluno", "Financeiro"),
     ];
     [HttpPost("login")]
     public IActionResult Login(LoginDto req)
@@ -26,7 +27,8 @@ public class AuthController(IConfiguration config) : ControllerBase
         var claims = new[]
         {
             new Claim(ClaimTypes.Name, usuario.User),
-            new Claim(ClaimTypes.Role, usuario.Role)
+            new Claim(ClaimTypes.Role, usuario.Role),
+            new Claim("setor", usuario.Setor)
         };
         
         var chave =  new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"]));

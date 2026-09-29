@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -27,11 +28,19 @@ builder.Services
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"])),
             ClockSkew = TimeSpan.Zero
         };
-
     });
 
 builder.Services.AddOpenApi();
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SoFinanceiro", p=>
+        p.RequireClaim("setor", "Financeiro"));
+
+    options.AddPolicy("FinanceiroOuAdmin", p =>
+        p.RequireAssertion(ctx =>
+            ctx.User.HasClaim("setor", "Financeiro") ||
+            ctx.User.HasClaim(ClaimTypes.Role, "Admin")));
+});
 
 var app = builder.Build();
 app.UseAuthentication();

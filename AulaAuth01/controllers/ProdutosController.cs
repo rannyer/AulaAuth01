@@ -20,7 +20,7 @@ public class ProdutosController: ControllerBase
     {
         return Ok($"Ola, {User.Identity!.Name})");
     }
-    [Authorize(Roles = "Admin")]
+    [Authorize(Policy = "SoFinanceiro")]
     [HttpGet("admin")]
     public IActionResult Admin()
     {
