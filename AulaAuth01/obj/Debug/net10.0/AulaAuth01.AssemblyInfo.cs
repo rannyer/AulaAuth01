@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AulaAuth01")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee29d1620747caac5ed2e2cdc0f7373a8ae30dbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("AulaAuth01")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AulaAuth01")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

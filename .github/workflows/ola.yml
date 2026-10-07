@@ -1,0 +1,24 @@
+name: Ola Actions
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  ola:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Dizer olá
+        run: echo "Ola, ${{ github.actor}}!
+          ommit ${{ github.sha}} na branch ${{ github.ref_name}}"
+
+      - name: Investigar a máquina
+        run: |
+          echo "Sustema operacional:"
+          uname -a
+          echo "Usuario atual:  $(whoami)"
+          echo "Pasta atual: $(pwd)"
+          echo "Arquivos na pasta atual"
+          ls -la  
+
