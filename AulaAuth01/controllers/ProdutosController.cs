@@ -24,6 +24,6 @@ public class ProdutosController: ControllerBase
     [HttpGet("admin")]
     public IActionResult Admin()
     {
-        return Ok("Só admin deveria ver isso");
+        return Ok("Só admin deveria ver isso <3");
     }
 }
