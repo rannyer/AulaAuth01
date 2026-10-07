@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Baixar o codigo do repositorio
+        uses: actions/checkout@v5
+        
       - name: Dizer olá
         run: echo "Ola, ${{ github.actor}}!
           ommit ${{ github.sha}} na branch ${{ github.ref_name}}"
